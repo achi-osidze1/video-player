@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import Video from './components/Video';
 
 function App() {
+
+  const videoPlayer = [
+    {
+      title : 'The Batman 2022',
+      IMDb : "IMDb 7.8",
+      url : 'https://www.youtube.com/watch?v=mqqft2x_Aa4'
+    }
+  ]
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {videoPlayer.map((m,index) => <Video
+        key={index}
+        title={m.title}
+        IMDb={m.IMDb}
+        url={m.url}
+        />)
+        }
     </div>
   );
 }
